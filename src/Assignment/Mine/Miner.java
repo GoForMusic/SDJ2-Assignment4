@@ -2,14 +2,12 @@ package Assignment.Mine;
 
 import Assignment.Deposit.Deposit;
 import Assignment.Log;
-import Assignment.Mine.Resources.Diamond;
-import Assignment.Mine.Resources.Resource;
+import Assignment.Mine.Resources.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static java.lang.Thread.getDefaultUncaughtExceptionHandler;
 import static java.lang.Thread.sleep;
 
 public class Miner implements Runnable{
@@ -20,7 +18,13 @@ public class Miner implements Runnable{
 
     public Miner(Deposit deposit){
         resources = new ArrayList<>();
+        resources.add(new Copper());
         resources.add(new Diamond());
+        resources.add(new Gold());
+        resources.add(new Iron());
+        resources.add(new Nothing());
+        resources.add(new Saphire());
+
         this.deposit=deposit;
     }
 
